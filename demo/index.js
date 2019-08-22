@@ -23,6 +23,7 @@ async function update() {
       .use(require('../lib/remark-lint-thai'))
       .process(textarea.value, function(err, file) {
         resolve(report(err || file))
+        console.log("DEBUG", file)
       }),
   )
   reportElement.textContent = output
